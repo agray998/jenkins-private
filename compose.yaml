@@ -1,0 +1,10 @@
+services:
+  nginx:
+    image: ${dockerhub_USR}/custom-nginx
+    build: .
+    ports: 
+    - "8000:80"
+    # volumes:
+    # - type: bind
+    #   source: .htpasswd
+    #   target: /etc/nginx/.htpasswd
