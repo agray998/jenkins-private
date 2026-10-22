@@ -24,5 +24,10 @@ pipeline {
         sh "docker logout"
       }
     }
+    stage('Deploy') {
+      steps {
+        sh "docker compose -f compose.yaml up -d"
+      }
+    }
   }
 }
