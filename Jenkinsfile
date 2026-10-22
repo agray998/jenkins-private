@@ -25,7 +25,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh "echo ${SECRET_VAR} | htpasswd -c .htpasswd -i admin"
+        sh "htpasswd -bc .htpasswd admin ${SECRET_VAR}"
         sh "docker compose -f compose.yaml up -d"
       }
     }
